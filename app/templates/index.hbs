@@ -1,0 +1,13 @@
+<h3><strong><em>QUESTION BOARD</em></strong></h3>
+
+<h2>The trail to your secret spot awaits you!</h2>
+
+<ul>
+   {{#each model as |hike|}}
+     <li><h4>{{#link-to 'hike' hike.id}}{{hike.location}}{{hike.country}}{{/link-to}}{{hike.author}}.</h4></li>
+   {{/each}}
+ </ul>
+
+
+ <hr>
+ <!-- {{new-hike saveHike="saveHike"}} -->

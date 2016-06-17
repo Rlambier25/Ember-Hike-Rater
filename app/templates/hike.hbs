@@ -1,0 +1,14 @@
+<h3>"{{model.review}}" written by {{model.author}}</h3>
+
+{{trail-tile trails=model.trailss}}
+
+{{new-trail saveTrail="saveTrail" hike=model}}
+
+{{update-hike hike=model update="update"}}
+
+<ul>
+  {{#each model as |hike|}}
+     <li>{{#link-to 'hike' hike.id}}{{hike.location}}{{hike.country}}{{/link-to}}
+     </li>
+  {{/each}}
+</ul>
