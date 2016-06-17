@@ -1,1 +1,11 @@
-{{yield}}
+<div class="container">
+  <h2>Here are some hikes for this country:</h2>
+  <ul>
+    {{#each hikes as |hike|}}
+       <li>
+         <h4>country: {{hike.hike}}</h4>
+         <h4>Author: {{hike.author}}</h4>
+       </li>
+    {{/each}}
+  </ul>
+</div>

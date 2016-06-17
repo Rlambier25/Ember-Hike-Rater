@@ -1,0 +1,22 @@
+<div class="container">
+  {{#if addNewHike}}
+    <h1>New Hike</h1>
+      <div>
+        <form>
+          <div class="form-group">
+            <label for="country"> New Hike</label>
+            {{input value=country id="country"}}
+          </div>
+
+          <div class="form-group">
+            <label for="note">location</label>
+            {{input value=location id="location"}}
+          </div>
+
+          <button class="btn btn-success"  {{action 'saveHike'}}>Save</button>
+        </form>
+      </div>
+  {{else}}
+    <button class="btn btn-success" {{action 'showHikeForm'}}>New Hike</button>
+  {{/if}}
+</div>

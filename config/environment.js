@@ -2,6 +2,12 @@
 
 module.exports = function(environment) {
   var ENV = {
+    firebase: {
+      apiKey: "AIzaSyDG-4xnvrml1x-Z52NiJEYzuozQOlCn6C4",
+      authDomain: "hike-rater.firebaseapp.com",
+      databaseURL: "https://hike-rater.firebaseio.com",
+      storageBucket: "hike-rater.appspot.com",
+    },
     modulePrefix: 'hike-rater',
     environment: environment,
     baseURL: '/',

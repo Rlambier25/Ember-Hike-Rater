@@ -1,15 +1,28 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model() {
-    return this.store.findAll('hike');
+  model(params) {
+    return this.store.findRecord('hike', params.hike_id);
   },
 
   actions: {
-    saveQuestion(hikeInput){
-      var newHike = this.store.createRecord('hike', hikeInput);
-      newQuestion.save();
-      this.transitionTo('index'); //not necessary
-    }
+    saveTrail(params) {
+      var newTrail = this.store.createRecord('trail', params);
+      var hike = params.hike;
+      hike.get('trails').addObject(newTrail);
+      newTrail.save().then(function() {
+        return hike.save();
+      });
+      this.transitionTo('hike', params.hike);
+    },
+    update(hike, params) {
+        Object.keys(params).forEach(function(key) {
+          if(params[key]!==undefined) {
+            hike.set(key,params[key]);
+          }
+        });
+        hike.save();
+        this.transitionTo('index');
+      }
   }
 });

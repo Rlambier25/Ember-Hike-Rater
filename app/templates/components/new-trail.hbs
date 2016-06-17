@@ -1,0 +1,22 @@
+<div class="">
+  {{#if addNewTrail}}
+    <h1>New Trail</h1>
+      <div>
+        <form>
+          <div class="form-group">
+            <label for="review">Trail:</label>
+            {{input value=review id="review"}}
+          </div>
+
+          <div class="form-group">
+            <label for="author">Author:</label>
+            {{input value=author id="author"}}
+          </div>
+
+          <button class="btn btn-success" {{action 'saveTrail'}}>Save</button>
+        </form>
+      </div>
+  {{else}}
+      <button type="button" class="btn btn-success" {{action 'trailFormShow'}}>New Trail</button>
+  {{/if}}
+</div>
