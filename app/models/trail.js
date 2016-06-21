@@ -6,5 +6,5 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   review: DS.attr(),
   author: DS.attr(),
-  location: DS.belongsTo('location', { async: true }),
+  location: DS.belongsTo('location', { async: true })
 });

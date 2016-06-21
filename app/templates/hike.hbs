@@ -1,14 +1,11 @@
-<h3>"{{model.review}}" written by {{model.author}}</h3>
+ <h3>"{{model.review}}" written by {{model.author}}</h3>
 
-{{trail-tile trails=model.trailss}}
+{{trail-tile trails=model.trails}}
 
-{{new-trail saveTrail="saveTrail" hike=model}}
+{{new-trail saveTrail="saveTrail" hike=model}} 
 
-{{update-hike hike=model update="update"}}
+<!-- {{update-hike hike=model update="update"}} -->
 
-<ul>
-  {{#each model as |hike|}}
-     <li>{{#link-to 'hike' hike.id}}{{hike.location}}{{hike.country}}{{/link-to}}
-     </li>
-  {{/each}}
-</ul>
+<h1> Wanna hike the {{model.hike}} </h1>
+
+{{new-trail save2="saveTrail" hike=model}}<!--might need to change to save3 -->

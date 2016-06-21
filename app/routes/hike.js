@@ -6,7 +6,7 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    saveTrail(params) {
+    saveHike(params) {
       var newTrail = this.store.createRecord('trail', params);
       var hike = params.hike;
       hike.get('trails').addObject(newTrail);

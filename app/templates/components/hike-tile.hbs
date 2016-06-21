@@ -1,11 +1,7 @@
-<div class="container">
-  <h2>Here are some hikes for this country:</h2>
+
+  <h2>Here are some trails for this location in {{hike.country}}:</h2>
   <ul>
-    {{#each hikes as |hike|}}
-       <li>
-         <h4>country: {{hike.hike}}</h4>
-         <h4>Author: {{hike.author}}</h4>
-       </li>
+    {{#each sortedTrails as |trail|}}
+      <li>{{#link-to 'trail' trail.id}}{{trail.author}}'s {{trail.review}}{{/link-to}}</li>
     {{/each}}
   </ul>
-</div>
