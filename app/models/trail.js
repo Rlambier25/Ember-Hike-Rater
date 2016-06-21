@@ -4,7 +4,8 @@ import DS from 'ember-data';
 // import { belongsTo, hasMany } from 'ember-data/relationships';
 
 export default DS.Model.extend({
+  name: DS.attr(),
   review: DS.attr(),
   author: DS.attr(),
-  location: DS.belongsTo('location', { async: true })
+  hike: DS.belongsTo('hike', { async: true })
 });

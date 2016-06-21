@@ -9,6 +9,7 @@ export default Ember.Component.extend({
 
   saveTrail() {
     var params = {
+      name: this.get('name'),
       author: this.get('author'),
       review: this.get('review'),
   };

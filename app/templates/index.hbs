@@ -1,15 +1,13 @@
+<h3><strong><em>Hike Rater!</em></strong></h3>
 
-<h2>The trail to your secret spot awaits you!</h2>
+<h2>The path to your next secret spot</h2>
 
-
-<h2>Hikes</h2>
 <ul>
-   {{#each model.hikes as |hike|}}
-     <li>{{#link-to 'hike' hike.id}}{{hike.location}}{{hike.country}}{{/link-to}}</li>
+   {{#each model as |hike|}}
+     <li><h4>{{#link-to 'hike' hike.id}}{{hike.country}}{{/link-to}}</h4></li>
    {{/each}}
  </ul>
 
 
  <hr>
-
-  {{new-hike saveHike="saveHike"}}
+ {{new-hike saveHike="saveHike"}}

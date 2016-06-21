@@ -1,11 +1,16 @@
- <h3>"{{model.review}}" written by {{model.author}}</h3>
+<h3>"{{model.country}}" and its hiking region is {{model.location}}</h3>
 
-{{trail-tile trails=model.trails}}
+<!-- {{trail-tile trails=model.trails}} -->
 
-{{new-trail saveTrail="saveTrail" hike=model}} 
+
 
 <!-- {{update-hike hike=model update="update"}} -->
 
-<h1> Wanna hike the {{model.hike}} </h1>
+<ul>
+  {{#each model as |hike|}}
+     <li>{{#link-to 'hike' hike.id}}{{hike.country}}{{hike.location}}{{/link-to}}
+     </li>
+  {{/each}}
+</ul>
 
-{{new-trail save2="saveTrail" hike=model}}<!--might need to change to save3 -->
+{{new-trail saveTrail="saveTrail" hike=model}}

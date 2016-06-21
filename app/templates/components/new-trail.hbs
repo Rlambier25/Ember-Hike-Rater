@@ -3,10 +3,17 @@
     <h1>New Trail</h1>
       <div>
         <form>
+
           <div class="form-group">
-            <label for="review">Trail:</label>
+            <label for="name">Trail Name:</label>
+            {{input value=name id="name"}}
+          </div>
+
+          <div class="form-group">
+            <label for="review">Review:</label>
             {{input value=review id="review"}}
           </div>
+
 
           <div class="form-group">
             <label for="author">Author:</label>
